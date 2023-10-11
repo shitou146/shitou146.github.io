@@ -1,0 +1,250 @@
+    1  history 
+    2  cd /
+    3  history 
+    4  ls
+    5  cd /d
+    6  cd /shitou/
+    7  cd /.
+    8  cd /d/桌面/
+    9  ls
+   10  cp b1.pdf/d/Git
+   11  cp b1.pdf/d/Git.bit/Git/shitou
+   12  cp --help
+   13  cp b1.pdf Git.bit
+   14  cp b1.pdf d/Git.bit/Git/shitou
+   15  cp b1.pdf /d/Git.bit/Git/shitou
+   16  cp b2.pdf /d/Git.bit/Git/shitou
+   17  history
+   18  cp b1.pdf /d/Git.bit/Git/shitou
+   19  cp b1.pdf /d/Git.bit/Git/shitou
+   20  cp b1.pdf /d/Git.bit/Git/shitou
+   21  cp b1.pdf /d/Git.bit/Git/shitou
+   22  cp b1.pdf /d/Git.bit/Git/shitou
+   23  cp b1.pdf /d/Git.bit/Git/shitou
+   24  cp b1.pdf /d/Git.bit/Git/shitou
+   25  cp b1.pdf /d/Git.bit/Git/shitou
+   26  cp b1.pdf /d/Git.bit/Git/shitou
+   27  cp b1.pdf /d/Git.bit/Git/shitou
+   28  cp b1.pdf /d/Git.bit/Git/shitou
+   29  cp b1.pdf /d/Git.bit/Git/shitou
+   30  cp b1.pdf /d/Git.bit/Git/shitou
+   31  cp b1.pdf /d/Git.bit/Git/shitou
+   32  cp b1.pdf /d/Git.bit/Git/shitou
+   33  cp b1.pdf /d/Git.bit/Git/shitou
+   34  cp b1.pdf /d/Git.bit/Git/shitou
+   35  cp b1.pdf /d/Git.bit/Git/shitou
+   36  cp b1.pdf /d/Git.bit/Git/shitou
+   37  cp b1.pdf /d/Git.bit/Git/shitou
+   38  cp b1.pdf /d/Git.bit/Git/shitou
+   39  cp b1.pdf /d/Git.bit/Git/shitou
+   40  cp b1.pdf /d/Git.bit/Git/shitou
+   41  cp b1.pdf /d/Git.bit/Git/shitou
+   42  cp b1.pdf /d/Git.bit/Git/shitou
+   43  cp b1.pdf /d/Git.bit/Git/shitou
+   44  cp b1.pdf /d/Git.bit/Git/shitou
+   45  cp b1.pdf /d/Git.bit/Git/shitou
+   46  cp b1.pdf /d/Git.bit/Git/shitou
+   47  cp b1.pdf /d/Git.bit/Git/shitou
+   48  cp b1.pdf /d/Git.bit/Git/shitou
+   49  cp b1.pdf /d/Git.bit/Git/shitou
+   50  cp b1.pdf /d/Git.bit/Git/shitou
+   51  cp b1.pdf /d/Git.bit/Git/shitou
+   52  cp b1.pdf /d/Git.bit/Git/shitou
+   53  cp b1.pdf /d/Git.bit/Git/shitou
+   54  cp b1.pdf /d/Git.bit/Git/shitou
+   55  cp b1.pdf /d/Git.bit/Git/shitou
+   56  cp b1.pdf /d/Git.bit/Git/shitou
+   57  cp b1.pdf /d/Git.bit/Git/shitou
+   58  cp b1.pdf /d/Git.bit/Git/shitou
+   59  cp b1.pdf /d/Git.bit/Git/shitou
+   60  cp b1.pdf /d/Git.bit/Git/shitou
+   61  cp b1.pdf /d/Git.bit/Git/shitou
+   62  cp b1.pdf /d/Git.bit/Git/shitou
+   63  cp b1.pdf /d/Git.bit/Git/shitou
+   64  cp b1.pdf /d/Git.bit/Git/shitou
+   65  cp b1.pdf /d/Git.bit/Git/shitou
+   66  cp b1.pdf /d/Git.bit/Git/shitou
+   67  cp b1.pdf /d/Git.bit/Git/shitou
+   68  cp b1.pdf /d/Git.bit/Git/shitou
+   69  cp b1.pdf /d/Git.bit/Git/shitou
+   70  cp b1.pdf /d/Git.bit/Git/shitou
+   71  history
+   72  rm b1.pdf
+   73  mv b2.pdf 回收站
+   74  cd /
+   75  history 
+   76  cd
+   77  cd /
+   78  cd /d/桌面
+   79  touch 20213659刘盛.txt
+   80  history >20213659刘盛.txt 
+   81  cp
+   82  cd /
+   83  ls
+   84  cd /c
+   85  ls
+   86  cd /.
+   87  cd /d
+   88  ls
+   89  cd /
+   90  history 
+   91  cd /d/桌面
+   92  ls
+   93  mv 20213659刘盛.txt /d/Git.bit/Git/shitou
+   94  cd /..
+   95  cd /d/Git.bit/Git/shitou/
+   96  ls
+   97  cp b1.pdf b2.pdf /d/桌面/
+   98  ls
+   99  cd /.
+  100  cd /d/桌面
+  101  rm b1.pdf b2.pdf
+  102  ls
+  103  rm editplus4.zip
+  104  ls
+  105  rm editplus4.zip
+  106  history 
+  107  cd /.
+  108  cd /c
+  109  ls
+  110  cd /.
+  111  cd /d/桌面/
+  112  history 
+  113  history >20213659刘盛.txt
+  114  cd /
+  115  history 
+  116  cd /
+  117  history 
+  118  cd /d/Git/shitou
+  119  ls
+  120  mkdir 第一周作业
+  121  cd /
+  122  cd /d/桌面
+  123  mv 20213659刘盛 /d/Git/shitou/第一周作业
+  124  mv 20213659刘盛.txt/d/Git/shitou/第一周作业
+  125  mv 20213659刘盛.txt /d/Git/shitou/第一周作业
+  126  cd /..
+  127  history 
+  128  cd /d/桌面
+  129  mv 21计科3班20213659刘盛.docx /1.docx
+  130  cd /..
+  131  ls
+  132  cd /d/Git
+  133  ls
+  134  cat
+  135  cd /
+  136  history 
+  137  cd /d/桌面
+  138  mv 20213659刘盛-20230905.docx /d/Git/20213659刘盛-20230905
+  139  cd /..
+  140  cd /d/Git/shitou/20213659刘盛-20230905/
+  141  ls
+  142  history >20213659刘盛-20230905.txt
+  143  /c
+  144  d/
+  145  history 
+  146  c/
+  147  dexit
+  148  cd/
+  149  cd /
+  150  d
+  151  cd /
+  152  history 
+  153  whoami
+  154  cd /d
+  155  ls
+  156  ls /d-1
+  157  ls /d-i
+  158  ls-1
+  159  ls -1
+  160  ls -l
+  161  ls
+  162  ls -lh
+  163  ls *.mp3
+  164  cd /d/Git/shitou
+  165  ls *.mp3
+  166  cd \d
+  167  cd /d
+  168  cd /d/Git
+  169  mk
+  170  mkdir mp3
+  171  mkdir face
+  172  mkdir pdf
+  173  mkdir homework
+  174  ls
+  175  ls shitou
+  176  mv 20213659刘盛-20230905 homework
+  177  ls
+  178  ls shitou
+  179  cd /d
+  180  mv *.mp3 /Git/mp3
+  181  cd /d/Git
+  182  mv *.mp3 /mp3
+  183  ls
+  184  ls
+  185  cd /d/Git/shitou
+  186  ls
+  187  mv *.mp3 /d/Git/mp3
+  188  mv *.txt /d/Git/homework
+  189  mv *.pdf /d/Git/pdf
+  190  ls pdf
+  191  cd /Git
+  192  cd /d/Git
+  193  ls pdf
+  194  cat git
+  195  cat Git
+  196  ls homework
+  197  ls mp3
+  198  rm face
+  199  ls
+  200  ls shitou
+  201  /d/Git/shitou
+  202  cd /d
+  203  cd /
+  204  cd /d/Git/shitou
+  205  history 
+  206  ls -l
+  207  ls -lh
+  208  cd /d/Git
+  209  ls -lh
+  210  ls
+  211  cd /d
+  212  cd /
+  213  ls
+  214  cd /d/Git/shitou
+  215  ls
+  216  cd ..
+  217  cp shitou /
+  218  -r
+  219  cp shitou / -r
+  220  cd /
+  221  ls
+  222  cd /shitou
+  223  -R
+  224  /d/Git/
+  225  cd /
+  226  ls
+  227  cd /d/shitou
+  228  cd /d/Git/shitou
+  229  ls -R
+  230  history 
+  231  cd /
+  232  cd /d/桌面
+  233  ls
+  234  mv videoClips /d/Git/shitou
+  235  cd /
+  236  cd /d/shitou
+  237  cd /d/Git/shitou
+  238  ls
+  239  tar -xf videoClips
+  240  ls
+  241  rm videoClips
+  242  ls
+  243  rm videoClips
+  244  ls
+  245  ls -r
+  246  ls videoMP4
+  247  exit
+  248  cd /
+  249  history 
+  250  history >20213659刘盛.txt
