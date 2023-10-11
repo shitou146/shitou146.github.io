@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ping命令、Curl命令和Cut命令</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      color: #333;
+      line-height: 1.6;
+      margin: 20px;
+    }
+    
+    h2 {
+      margin-bottom: 10px;
+    }
+    
+    p {
+      margin-bottom: 20px;
+    }
+    
+    code {
+      background-color: #f5f5f5;
+      padding: 2px 4px;
+    }
+    
+    ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+    
+    li {
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>网络工具命令简介</h1>
+  
+  <h2>Ping命令</h2>
+  <p>
+    ping是一个十分基本但又十分重要的tcp/ip网络工具。它的主要作用为:
+(1).通常用来检测网络的连通情况和测试网络速度。
+(2).也可以根据域名得到相应主机的ip地址。
+(3).根据ping返回的ttl值来判断对方所使用的操作系统及数据包经过路由器的数量。
+(4).因为具备以上的功能 ,ping命令常常被黑客用来进行网络扫描和进攻。
+对于网络管理员和普通用户来说,我们通常用它来测试网络的连通情况,如果无法正常上网,ping命令是检测网络故障的基本工具。
+ping命令的最简单用法是在命令提示符下输入:ping 对方的ip地址
+这样就可以测试本机和对方主机之间的网络连通情况了。
+ping命令执行后会显示一系列的replyfrom或者request timeout 这样的结果，前者表示与对方的网络是连通的，而后者表示无法与对方进行网络通信。
+bytes值:表示通信过程中发送的数据包大小,单位是字节。
+time值:表示响应时间，这个时间越小，说明你与对方的通信的速度越快，延时越短。
+ttl值:time to love,表示数据包再经过多少个路由器如果还不能到达就将被丢弃,这里可以通过ping返回的ttl值大小，粗略地判断目标系统类型是windows系列
+还是unix/linux系列。默认情况下,Linux系统的ttl最大值为64或255,windowsnt/2000/xp系统的ttl最大值为128，unix主机的ttl最大值为255。
+  </p>
+  <ul>
+    <li>用法:ping 对方的IP地址</li>
+    <li>常用选项：</li>
+    <ul>
+      <li>-t: 可以不间断地ping指定ip地址的计算机,直到管理员ctrl+c中断,这样管理员可以通过比较多次通信后的统计数据来判断网络的连接情况，比如发送了多少数据包，接收到多少，丢失了多少，平均往返时间多少等，以此来判断网络的性能。</li>
+      <li>-n 数据包数量: 在默认情况下,一般执行一次ping命令只发送4个数据包,通过-n选项可以自己定义发送的数据包数目，对衡量网络速度都很有帮助。</li>
+      <li>-l 数据包大小: 在默认情况下windows的ping发送的数据包大小为32字节,最大能发送65535字节。当一次发送的数据包大于或者等于65535字节时，将可能导致接收方的计算机宕机。所以微软限制了这一数值；这个参数配合其他参数功能十分强大，比如网络黑客可以结合-t参数实施dos攻击。例如：ping -l 65500 -t ip地址</li>
+    </ul>
+  </ul>
+  
+  <h2>Curl命令</h2>
+  <p>
+    curl 是一个在命令行下工作的开源工具，用于传输数据。它支持多种网络协议，包括 HTTP、HTTPS、FTP、SMTP 等，可以通过 URL 来进行数据传输和交互。curl 命令在 Linux 中非常常用，具有强大的功能和灵活的用法。
+  </p>
+  <ul>
+    <li>发送GET请求:curl URL</li>
+    <li>发送POST请求:curl -X POST -d "data=example" URL</li>
+    <li>设置请求头:curl -H "Content-Type: application/json" URL</li>
+    <li>下载文件:curl -o filename.txt URL</li>
+  </ul>
+  
+  <h2>Cut命令</h2>
+  <p>
+    cut 命令是一个用于提取文件或文本中指定字段的常用命令。它可以按列（字段）进行切割，并输出指定字段内容。
+  </p>
+  <ul>
+    <li>切割文件列:cut -f 列号 文件名</li>
+    <li>自定义字段分隔符:cut -d 分隔符 -f 列号 文件名</li>
+    <li>切割字符范围:cut -c 字符范围 文件名</li>
+  </ul>
+</body>
+</html>
