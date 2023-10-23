@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>视频播放</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        #videoContainer {
+            width: 640px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #myVideo {
+            width: 100%;
+        }
+        #controls {
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+        }
+        button {
+            padding: 10px 16px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:first-child {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="videoContainer">
+        <video id="myVideo"></video>
+    </div>
+    <div id="controls">
+        <button id="last">上一个</button>
+        <button id="stop">暂停</button>
+        <button id="play">播放</button>
+        <button id="next">下一个</button>
+    </div>
+    <script>
+        var videoMp4 = ["2013东西方2马的交锋.mp4", "上瘾.mp4", "农民吹牛.mp4", "funDogs.mp4", "世界冠军江西弃婴.mp4", "逗八哥狗.mp4"];
+        var myVideo = document.getElementById("myVideo");
+        var i = 0;
+        myVideo.src = "videoMp4/" + videoMp4[i];
+        document.getElementById("play").onclick = function() {
+            myVideo.play();
+        };
+        document.getElementById("stop").onclick = function() {
+            myVideo.pause();
+        };
+        document.getElementById("next").onclick = function() {
+            i++;
+            if (i == videoMp4.length) i = 0;
+            myVideo.src = "videoMp4/" + videoMp4[i];
+            myVideo.play();
+        };
+        document.getElementById("last").onclick = function() {
+            i--;
+            if (i == -1) i = videoMp4.length - 1;
+            myVideo.src = "videoMp4/" + videoMp4[i];
+            myVideo.play();
+        }
+    </script>
+</body>
+</html>
