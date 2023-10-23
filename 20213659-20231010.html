@@ -50,7 +50,7 @@
 </head>
 <body>
     <div id="videoContainer">
-        <video id="myVideo"></video>
+        <video id="myVideo" controls></video>
     </div>
     <div id="controls">
         <button id="last">上一个</button>
@@ -62,7 +62,7 @@
         var videoMp4 = ["2013东西方2马的交锋.mp4", "上瘾.mp4", "农民吹牛.mp4", "funDogs.mp4", "世界冠军江西弃婴.mp4", "逗八哥狗.mp4"];
         var myVideo = document.getElementById("myVideo");
         var i = 0;
-        myVideo.src = "videoMp4/" + videoMp4[i];
+        myVideo.src = "videoMp4\\" + videoMp4[i];
         document.getElementById("play").onclick = function() {
             myVideo.play();
         };
