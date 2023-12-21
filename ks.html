@@ -1,0 +1,329 @@
+
+<!doctype html>
+<html lang="CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>视频播放器</title>
+  <style type="text/css">
+    body {
+      margin: 0;
+      padding: 0;
+      background:rgb(152, 206, 125);
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    button {
+      font-size: 1.3em;
+      margin: 20px 20px;
+      cursor: pointer;
+      color: #fff;
+      background-color: #409eff;
+      border-color: #409eff;
+      border: 1px solid #409eff;
+      padding: 12px 20px;
+      line-height: 1;
+      border-radius: 4px;
+      text-align: center;
+    }
+
+    button:hover {
+      background-color: #4481bd;
+    }
+
+    div#logo {
+      background-color: #67c23a;
+      color: #fff;
+      font-size: 1.5em;
+      padding: 16px;
+      position: absolute;
+      right: 221px;
+    }
+
+    div#time {
+      position: absolute;
+      background-color: #0a7beb;
+      color: #fff;
+      padding: 20px;
+      font-size: 1.5em;
+      left: 221px;
+    }
+
+    .stage {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .video {
+      width: 70%;
+    }
+
+    .imgs {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .img {
+      width: 147px;
+      height: 194px;
+    }
+
+    .names {
+      display: flex;
+    }
+
+    .name {
+      font-size: 22px;
+      margin-left: 57px;
+      margin-top: 8px;
+    }
+
+    .title {
+      position: absolute;
+      top: 0px;
+    }
+    #main{
+      width: 100%;
+    position: absolute;
+    top: 364px;
+    }
+  </style>
+  <script src="ks.js">
+
+  </script>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="title">
+      <h1 style="text-align: center;">刘盛的自学系统</h1>
+      <div class="imgs">
+        <img class="img" src="李老师.jpg" alt="">
+        <img class="img" src="刘盛.jpg" alt="">
+        <img class="img" src="周志能.jpg" alt="">
+        <img class="img" src="江冠龙.jpg" alt="">
+        <img class="img" src="高翔.jpg" alt="">
+        <img class="img" src="吴艳祺.jpg" alt="">
+      </div>
+      <div class="names">
+        <div class="name">李建宏<br><span>（老师）</span></div>
+        <div class="name">刘盛<br><span>（组长）</span></div>
+        <div class="name">周志能<br><span>（成员）</span></div>
+        <div class="name">江冠龙<br><span>（成员）</span></div>
+        <div class="name">高翔<br><span>（成员）</span></div>
+        <div class="name">吴艳祺<br><span>（成员）</span></div>
+      </div>
+    </div>
+    <div id="main">
+      <div id="logo">
+      </div>
+      <div id="time">
+      </div>
+      <div id="stage" class="stage">
+        <audio id="myAudio" controls style="position: absolute;
+      top: 126px;"></audio>
+        <video id="myVideo" class="video"></video>
+      </div>
+
+
+      <div id="UI" style="display: flex;justify-content: center;">
+        <button id="previous">Previous</button>
+        <button id="play">Play</button>
+        <button id="pause">Pause</button>
+        <button id="next">Next</button>
+        <button id="switch">视频</button>
+        <div id="a_title"></div>
+      </div>
+      <h2>江西科技师范大学<br>
+      JAVA二班<br>
+    第六小组：刘盛 江冠龙 周志能 吴艳祺 高翔</h2>
+    </div>
+  </div>
+  <script>
+    //建立Model模拟播放对象，管理对象的一切属性和行为
+    var Model = {
+
+      i: 0,
+      isVideo: true,
+      UI: {
+        stageDom: document.getElementById("stage"),
+        videoDom: document.getElementById("myVideo"),
+        timeDom: document.getElementById("time"),
+        audioDom: document.getElementById("myAudio"),
+        logoDom: document.getElementById("logo"),
+        titleDom: document.getElementById("a_title"),
+        //下面是按钮
+        playDom: document.getElementById("play"),
+        pauseDom: document.getElementById("pause"),
+        prevDom: document.getElementById("previous"),
+        nextDom: document.getElementById("next"),
+        switchDom: document.getElementById("switch"),
+      },
+      play: function () {
+        Model.isVideo ? Model.UI.videoDom.play() : Model.UI.audioDom.play();
+        Model.mediaInfo();
+        Model.timeInfo();
+      },
+      pause: function () {
+        Model.isVideo ? Model.UI.videoDom.pause() : Model.UI.audioDom.pause();
+      },
+      prev: function () {
+        Model.i--;
+        let i = Model.i;
+        if (i == -1) 
+            Model.i = mediaData.videoFileNames.length-1;
+        Model.loadMedia();
+        Model.play();
+      },
+      next: function () {
+        Model.i++;
+        let i = Model.i;
+        if (i == mediaData.videoFileNames.length) 
+            Model.i=0;
+        Model.loadMedia();
+        Model.play();
+      },
+      mediaInfo: function () {
+        let mediaNum = Model.isVideo ? mediaData.videoFileNames.length : mediaData.podFileStruct.length;
+        Model.UI.logoDom.textContent = 'NO.' + (Model.i + 1) + '/' + mediaNum;
+      },
+      timeInfo: function () {
+        let mediaTime = Model.isVideo ? Model.UI.videoDom.duration : Model.UI.audioDom.duration;
+        //console.log( mediaTime); 
+        mediaTime = parseInt(mediaTime);
+        let currentTime = Model.isVideo ? Model.UI.videoDom.currentTime : Model.UI.audioDom.currentTime;
+        currentTime = parseInt(currentTime);
+        Model.UI.timeDom.textContent = currentTime + ' s' + '/' + mediaTime + ' s';
+      },
+      createMenus: function () {
+        let pDom = document.querySelectorAll("div#stage  input");
+        if (pDom) {
+          for (let input of pDom) {
+            Model.UI.stageDom.removeChild(input);
+          }
+        }
+        if (Model.isVideo) {
+
+        } else {
+
+          let time = mediaData.podFileStruct[0].time;
+          let title = mediaData.podFileStruct[0].title;
+          //console.log(time.length ) ;
+          for (let i = 0; i < time.length; i++) {
+            pDom = document.createElement("input");
+            pDom.type = "button";
+            pDom.value = title[i];
+            //控制坐标
+
+            pDom.style.margin = 5 + "px";
+            pDom.style.height = 42 + "px";
+            //异步代码onclick
+            pDom.onclick = function () {
+              Model.play();
+              Model.UI.audioDom.currentTime = time[i][0];
+              window.setTimeout(Model.pause, (time[i][1] - time[i][0]) * 1000);
+
+            };
+            Model.UI.stageDom.appendChild(pDom);
+          }
+        }
+
+      },
+
+      loadMedia: function () {
+        let i = Model.i;
+
+        if (Model.isVideo) {
+          Model.UI.videoDom.src = mediaData.videoPath + mediaData.videoFileNames[i];
+        } else {
+
+          Model.UI.audioDom.src = mediaData.podPath + mediaData.podFileStruct[0].fileName;
+        }
+
+        Model.timeInfo();
+        Model.mediaInfo();
+        Model.createMenus();
+      }, //loadMedia结束
+
+      init: function () {
+        //视频UI全屏设置
+        // let browserWidth = document.body.clientWidth ;
+        // Model.UI.videoDom.style.width = "90%" ;
+
+        //预读媒体文件
+
+        Model.loadMedia(0);
+        window.setInterval(Model.timeInfo, 1000);
+
+        //初始化UI的控件的onclick属性
+
+
+        //下面是异步执行的代码
+        Model.UI.playDom.onclick = function () {
+          Model.play();
+        };
+
+        Model.UI.pauseDom.onclick = function () {
+          Model.pause();
+        };
+        Model.UI.prevDom.onclick = function () {
+          Model.prev();
+        };
+        Model.UI.nextDom.onclick = function () {
+          Model.next();
+        };
+        Model.UI.switchDom.onclick = function () {
+          Model.pause();
+          Model.i = 0;
+
+          Model.isVideo = !Model.isVideo;
+          Model.UI.switchDom.textContent = Model.isVideo ? "视 频" : "音 频 ";
+          
+          toggleMedia();
+          
+          Model.loadMedia();
+          
+        };
+
+      }//init 结束 ,
+    }; //Model 结束
+
+
+    Model.init();
+
+    function toggleMedia() {
+      if (Model.isVideo) {
+        // 显示视频，隐藏音频
+        Model.UI.videoDom.style.display = "block";
+        Model.UI.audioDom.style.display = "none";
+        Model.UI.nextDom.style.display = "";
+        Model.UI.prevDom.style.display = "";
+      }
+      else {
+        // 显示音频，隐藏视频
+        Model.UI.videoDom.style.display = "none";
+        Model.UI.audioDom.style.display = "block";
+        Model.UI.nextDom.style.display = "none";
+        Model.UI.prevDom.style.display = "none";
+
+      }
+    }
+    // 初始化时执行一次
+    toggleMedia();
+  </script>
+</body>
+
+</html>
